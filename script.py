@@ -2,11 +2,13 @@ import httplib2
 import apiclient
 from oauth2client.service_account import ServiceAccountCredentials
 
-from utils import get_dollar_exchange_rate
+from config import Config
 from db.query import update_entities_state
+from utils import get_dollar_exchange_rate
+
 
 CREDENTIALS_FILE = 'credentials.json'
-SPREADSHEET_TABLE_ID = '1qqrEwDercKCBlX6XcZRPA7Tn-OBsfMUh0SOllBQUGdI'
+SPREADSHEET_TABLE_ID = Config.SPREADSHEET_TABLE_ID
 
 
 def get_google_service():

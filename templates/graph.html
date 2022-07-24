@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+ <head>
+   <meta charset="utf-8">
+ </head>
+ <body>
+ <canvas id="myChart" width="900" height="400"></canvas>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+   type: 'line',
+   data: {
+       labels: {{ labels | safe }},
+       datasets: [{
+           label: 'График стоимости заказов по датам',
+           data: {{ values | safe }},
+           borderWidth: 1
+       }]
+   },
+   options: {
+        responsive: false
+   }
+});
+</script>
+ </body>
+</html>
